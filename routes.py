@@ -11,6 +11,7 @@ def index():
 def add():
     if request.method == 'POST':
         date = request.form['date']
+        
         time = request.form['time']
         add_entry(time, date)
         return redirect(url_for('index'))
