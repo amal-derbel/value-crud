@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Date and Time </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Edit Date and Time </h1>
+    <form method="post">
+        <label for="time">Time (HH:MM:SS):</label> 
+        <input type="text" id="time" name="time" value="{{ entry.time}}" required><br> <br>
+        <label for="date">Date (DD-MM-YYYY):</label> 
+        <input type="text" id="date" name="date" value="{{ entry.date}}" required> <br> <br>
+        <input type="submit" value="Save Changes">
+    </form>
+    <br>
+    <a class="aback" href="{{ url_for('index') }}">Back to Entries</a>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

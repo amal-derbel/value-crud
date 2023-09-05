@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date and Time </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1 >Date and Time</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Date</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for entry in entries %}
+                <tr>
+                    <td>{{ entry.time }}</td> 
+                    <td>{{ entry.date }}</td>
+                    <td><a href="{{ url_for('edit', id=entry._id) }}">Edit</a></td>
+                    <td>
+                        <form method="post" action="{{ url_for('delete', id=entry._id) }}">
+                            <input type="submit" value="Delete" onclick="return confirm('Are you sure?')">
+                        </form>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+
+    </table>
+    <br>
+    <a class="aback" href="{{ url_for('add') }}">Add New Entry</a>
+</body>
+</html>

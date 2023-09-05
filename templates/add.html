@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Date and Time </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+    <h1>Add Date and Time </h1>
+    <form  method="post">
+        <label for="time">Time (HH:MM:SS):</label>
+        <input type="text" id="time" name="time" required><br> <br>
+        <label for="date">Date (DD-MM-YYYY):</label>
+        <input type="text" id="date" name="date" required><br> <br>
+        <input type="submit" value="Add Entry">
+    </form>
+    <br>
+    <a class="aback" href="{{ url_for('index') }}">Back to Entries</a>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
